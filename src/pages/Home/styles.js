@@ -9,7 +9,8 @@ export const Container = styled.div`
   align-items: center;
   gap: 40px;
 
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 `;
 
 export const Image = styled.img`
@@ -23,13 +24,15 @@ export const ContainerItens = styled.div`
     rgba(255, 255, 255, 0.6) 0.85%,
     rgba(255, 255, 255, 0.15) 100%
   );
+  //
   border-radius: 61px 61px 0 0;
+  backdrop-filter: blur(45px);
   padding: 50px 36px;
 
   display: flex;
   flex-direction: column;
 
-  height: 100vh;
+  height: 100%;
 `;
 
 export const H1 = styled.h1`
