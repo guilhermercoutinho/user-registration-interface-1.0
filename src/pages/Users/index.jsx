@@ -45,7 +45,7 @@ function Users() {
   return (
     <Container>
       <Image src={Avatar} alt="logo-imagem" />
-      <ContainerItens isBlur={true}>
+      <ContainerItens isBlur ={true}>
         <H1>Usuários</H1> 
 
         <ul>
