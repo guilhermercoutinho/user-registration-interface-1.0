@@ -9,17 +9,13 @@ import Trash from "../../assets/trash.svg";
 
 import H1 from "../../components/Title";
 import ContainerItens from "../../components/ContainerItens";
+import Button from "../../components/Button";
 
-import {
-  Container,
-  Image,
-  Button,
-  User,
-} from "./styles";
+import { Container, Image, User } from "./styles";
 
 function Users() {
   const [users, setUsers] = useState([]);
-  const history = useHistory()
+  const history = useHistory();
 
   useEffect(() => {
     async function fetchUsers() {
@@ -28,25 +24,25 @@ function Users() {
       setUsers(newUsers);
     }
 
-    fetchUsers()
+    fetchUsers();
   }, []);
 
   async function deleteUser(userId) {
-    await axios.delete(`http://localhost:3000/users/${userId}`)
+    await axios.delete(`http://localhost:3000/users/${userId}`);
     const newUsers = users.filter((user) => user.id !== userId);
 
     setUsers(newUsers);
   }
 
   function goBackPage() {
-    history.push("/")
+    history.push("/");
   }
 
   return (
     <Container>
       <Image src={Avatar} alt="logo-imagem" />
-      <ContainerItens isBlur ={true}>
-        <H1>Usuários</H1> 
+      <ContainerItens isBlur={true}>
+        <H1>Usuários</H1>
 
         <ul>
           {users.map((user) => (
@@ -60,10 +56,9 @@ function Users() {
           ))}
         </ul>
 
-        <Button onClick={goBackPage}>
+        <Button isBack={true} onClick={goBackPage}>
           <img src={Arrow} alt="seta" /> Voltar
         </Button>
-
       </ContainerItens>
     </Container>
   );
